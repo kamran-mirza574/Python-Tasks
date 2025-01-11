@@ -1,0 +1,433 @@
+mylist = []
+for i in range(10):
+    xy = int(input("enter a positive number:"))
+    mylist.append(xy)
+elist = []
+olist = []
+for item in mylist:
+    if item % 2 == 0:
+        elist.append(item)
+    else:
+        olist.append(item)
+
+print("sum of odd numbers:", sum(olist))
+print("sum of even numbers:", sum(elist))
+
+mylist = []
+
+for i in range(10):
+    xy = int(input("enter a positive number"))
+    mylist.append(xy)
+elist = []
+olist = []
+for item in mylist:
+    if item % 2 == 0:
+        elist.append(item)
+    else:
+        olist.append(item)
+
+print("sum of even numbers: ", sum(elist))
+print("sum of odd numbers: ", sum(olist))
+
+
+glist = []
+import random
+for i in range(20):
+    glist.append(random.randint(1,50))
+
+def isprime(n):
+    primelist = []
+    for y in range(2,n):
+        for z in range(2,y):
+            if y % z == 0:
+                break
+            else:
+                primelist.append(y)
+                primelist.sort()
+                return primelist
+
+isprime(glist)
+
+
+
+x = int(input("What number should the loop end at?"))
+
+for i in range(0,100):
+    print(i)
+    if i == x:
+        break
+
+x = int(input("What number should the loop skip?"))
+
+for i in range(0,100):
+
+    if i == x:
+        continue
+    print(i)
+
+password = "Fall"
+epassword = ""
+while password != epassword:
+    epassword = input("Please enter your password:")
+
+start = 0
+while start != 100:
+    start+=1
+    print(start)
+
+x = input("Enter Q to quit chatbot; Enter S to start chatbot. Within chatbot, Y = yes and N = no.")
+
+while x != "Q":
+    y = input("Are you over the age of 18?")
+    if y =="Y":
+        p = input("Do you know how to drive?")
+    else:
+        input("ARe you going to learn how to drive?")
+
+
+
+def distance(x1,x2,y1,y2):
+    d = ( ((x2-x1)**2)+((y2-y1)**2))**1/2
+    print(d)
+print("Please enter the following values to calculate distance")
+x1 = int(input("x1? "))
+x2 = int(input("x2? "))
+y1 = int(input("y1? "))
+y2 = int(input("y2? "))
+
+distance(x1,x2,y1,y2)
+
+
+
+d = int(input("Enter the day: "))
+m = int(input("Enter the month: "))
+
+if m == 1 or m == 3 or m == 5 or m == 7 or m == 9 or m == 11:
+    if d == 31:
+        print("The next day is:  1")
+    else:
+        print(f"The next day is:  {d+1}")
+
+elif m ==4 or m == 6 or m == 8 or m ==10 or m == 12:
+    if d == 30:
+        print("The next day is:  1")
+    else:
+        print(f"The next day is:  {d+1}")
+
+elif m == 2:
+    if d >= 28:
+        print("The next day is:  1, or 29 if it is a leap year")
+    else:
+        print(f"The next day is:  {d+1}")
+
+
+
+
+pl = str(input("Enter a number: "))
+ll = int(input("Enter a Single Digit: "))
+if ll >9 or ll<0:
+     ll = int(input("Enter a Single Digit: "))
+if ll >9 or ll<0:
+     ll = int(input("Enter a Single Digit: "))
+
+if ll >9 or ll<0:
+    print("Please run the program again and follow the instructions")
+else:
+    x = str(ll)
+    print(f"No. of {ll} in {pl}: ", pl.count(x))
+
+
+
+1.
+x=5
+y="5"
+print(x+int(y))
+#answer = 10
+
+2.
+num = int(input("Enter a number"))
+if num > 10:
+    print("The number is greater than 10")
+if num %2 == 0:
+    print("the number is even")
+
+else:
+    print("the number is not valid; it is either less than 10 or odd")
+
+
+3.
+#a for loop is used to iterate; a while loop is used to to execute a statement repeatedly when a given conhdition is true
+
+'''
+Part 2
+'''
+
+
+1.
+mylist = [1, 5 , 3, 6, 3, 5, 6, 1]
+print("orgiinal list: ", mylist)
+dlc = []
+for i in mylist:
+    if i not in dlc:
+        dlc.append(i)
+print("list without dupes: ", dlc)
+
+2.
+lsttuple = [(1,3), (5,9), (0,3), (3,7)]
+def calc_area(lsttuple):
+    area = []
+    for l,w in lsttuple:
+        area.append(l*w)
+        if 0 in area:
+            area.remove(0)
+    return area
+
+print(calc_area(lsttuple))
+
+3.
+
+4.
+def inverse_dictionary(d):
+    inverse = dict()
+    for key in d:
+        for item in d[key]:
+            if item not in inverse:
+                inverse[item]=[key]
+            else:
+                inverse[item].append(key)
+    return inverse
+mydict = {"kln":20, "rst":34, "tlm":12}
+print(inverse_dictionary(mydict))
+
+
+
+student_dict = {}
+
+n = int(input("Enter the number of students: "))
+
+
+for i in range(n):
+    s_num = input("Enter student number: ")
+    name = input("Enter name: ")
+    marks = float(input("Enter marks: "))
+
+    student_dict[s_num] = {'name': name, 'marks': marks}
+
+
+print("Passing students:")
+for s_num, student in student_dict.items():
+    if student['marks'] > 70:
+        print(student['name'])
+
+
+
+n = 9
+print("Pattern 1")
+for a1 in range(1, (n+1)//2 + 1): #from row 1 to 5
+    for a2 in range((n+1)//2 - a1):
+        print(" ", end = "")
+    for a3 in range((a1*2)-1):
+        print("*", end = "")
+    print()
+
+for a1 in range((n+1)//2 + 1, n + 1): #from row 6 to 9
+    for a2 in range(a1 - (n+1)//2):
+        print(" ", end = "")
+    for a3 in range((n+1 - a1)*2 - 1):
+        print("*", end = "")
+    print()
+
+
+
+
+
+rows = int(input("Enter number of rows: "))
+
+for i in range(rows, 1, -1):
+    for space in range(0, rows-i):
+        print("  ", end="")
+    for j in range(i, 2*i-1):
+        print("* ", end="")
+    for j in range(1, i-1):
+        print("* ", end="")
+    print()
+
+
+
+def CalculatePower(N,X):
+  P=1
+  for i in range(1, X+1):
+    P=P*N
+  return P
+
+N=int(input("enter the base."))
+X = int(input("enter the exponent."))
+print(CalculatePower(N,X))
+
+
+
+def stl(string):
+   listn = []
+   for letter in string:
+      listn.append(letter)
+   return listn
+
+
+answer = stl("kamran")
+
+print(answer)
+
+def length(string):
+   count = 0
+   for letter in string:
+      count += 1
+   return count
+
+answer = length("kamran")
+print(answer)
+
+
+
+
+ilist = [1,4,3,6,8,9]
+tlist = [4,12,43,65]
+blist = []
+
+for number in ilist:
+    if number in tlist:
+        blist.append(number)
+        print(blist)
+
+
+
+
+dlist = [1,3,3,4,2,5,]
+
+
+for i in range(4):
+    if 3 in dlist:
+        dlist.remove(3)
+    else:
+        print("no more duplicated values, list is", dlist)
+
+
+
+
+mylist = []
+
+for i in range (6):
+    blist = int(input("Give me 6 numbers for a list to check whether the numbers will form a palindrom or not"))
+    mylist.append(blist)
+tlist = mylist
+mylist.reverse()
+print("Your list:", tlist)
+if tlist == mylist:
+
+    print("Your list forms a palindrom.")
+else:
+    print("Your list does not form a palindrom")
+
+
+
+
+
+mylist = []
+
+for i in range (6):
+    blist = int(input("Give me 6 numbers for a list to check whether the numbers will form a palindrom or not"))
+    mylist.append(blist)
+tlist = mylist
+mylist.reverse()
+print("Your list:", tlist)
+if tlist == mylist:
+
+    print("Your list forms a palindrom.")
+else:
+    print("Your list does not form a palindrom")
+
+
+
+
+
+
+print("Hello! Give me a number, and I will show you all the numbers from 1 to 100 that are divisible by that number.")
+x = int(input("Your number:"))
+for i in range(0,100,x):
+    print(i)
+
+
+
+print("Hello! Give me a 2 numbers and I will give you all the numbers in between")
+x = int(input("Your first number:"))
+y = int(input("Your second number:"))
+for i in range(x,y):
+    print(i)
+
+
+
+
+num = int(input("Enter any number to identify whether it is positive, negative, or zero."))
+
+if num < 0:
+    print(f"{num} is negative.")
+
+elif num > 0:
+    print(f"{num} is positive.")
+
+elif num == 0:
+    print(f"{num} is equal to zero.")
+
+
+
+
+
+
+
+year = int(input("Welcome to the Leap Year Finder! Enter a year to see if it is a leap year or not."))
+
+if year % 4 == 0:
+    print(f"{year} is a leap year.")
+
+boardelse:
+    print(f"{year} is not a leap year.")
+
+
+
+
+
+n = int(input())
+vlist = []
+slist = []
+for i in range(0,n):
+    name = input()
+    score = int(input())
+    vlist.append([name,score])
+    slist.append(score)
+
+
+slist.sort()
+a = slist[1]
+for i in vlist:
+    if i[1] == a:
+        print(i[0])
+
+
+
+
+'''Num = int(input("Enter a number"))
+
+for i in range(1,15):
+    print(Num, "x", i, "=", Num*i)
+'''
+
+
+nlone = int(input("Enter the first number"))
+nltwo = int(input("Enter the second number"))
+nlthree = int(input("enter the third number"))
+
+vlist = []
+vlist.append(nlone)
+vlist.append(nltwo)
+vlist.append(nlthree)
+
+print(max(vlist))
